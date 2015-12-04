@@ -3,7 +3,7 @@ scrapy
 ## first to start your project------if it's your first using
 		cd ~
 		git clone https://github.com/MrZhangLoveLearning/novelscrapy.git
-		bash ncuscrapy/run.sh
+		bash novelscrapy/run.sh
 
 ##  else you had cloned it
 
@@ -12,7 +12,7 @@ scrapy
 	bash run.sh
 
 
-## in ~/ncuscrapy/ncu/ncu/ create a file
+## in ~/novelscrapy/novelscrapy/ create a file
 
 	touch passwd.ini
 
