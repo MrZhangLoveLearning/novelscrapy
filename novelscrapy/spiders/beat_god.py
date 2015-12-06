@@ -12,7 +12,7 @@ class BeatGodSpider(CrawlSpider):
     start_urls = ['http://tieba.baidu.com/f?kw=%E6%8B%A9%E5%A4%A9%E8%AE%B0&ie=utf-8&tab=good']
 
     rules = (
-        Rule(LinkExtractor(allow=('http://tieba.baidu.com/f\?kw=%E6%8B%A9%E5%A4%A9%E8%AE%B0&ie=utf-8&tab=good&cid=&pn=[0-9]*',),)),
+        # Rule(LinkExtractor(allow=('http://tieba.baidu.com/f\?kw=%E6%8B%A9%E5%A4%A9%E8%AE%B0&ie=utf-8&tab=good&cid=&pn=[0-9]*',),)),
         Rule(LinkExtractor(allow=r'/p/[0-9]*'), callback='parse_item', follow=True),
     )
 
