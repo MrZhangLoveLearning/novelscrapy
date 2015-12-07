@@ -1,4 +1,4 @@
-# coding=utf-8
+# coding:utf-8
 """The database helper"""
 from sqlalchemy import func, or_, not_
 import connection
@@ -84,7 +84,7 @@ def send_art_email(to_self=False):
 	content=get_send_content(10,to_self)
 	if to_self:
 		clear_email()
-	print content
+	# print content
 	return send_email.send_mail('novels newest',content,to_self)
 
 # clear_email(0)
