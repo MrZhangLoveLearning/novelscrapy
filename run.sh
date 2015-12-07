@@ -3,8 +3,6 @@ echo "run the spider"
 
 base_dir=~/novelscrapy
 
-git fetch
-git pull
 
 if [ ! -f $base_dir/env/bin/activate ]
 then
