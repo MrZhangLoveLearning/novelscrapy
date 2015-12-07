@@ -13,7 +13,7 @@ class PerfectWorldSpider(CrawlSpider):
 
     rules = (
         # Rule(LinkExtractor(allow=('http://tieba.baidu.com/f\?kw=%E5%89%91%E7%8E%8B%E6%9C%9D&ie=utf-8&tab=good&cid=&pn=[0-9]*',),)),
-        Rule(LinkExtractor(allow=r'/p/[0-9]*'), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow=r'/p/[0-9]*'), callback='parse_item', follow=False),
     )
 
     def parse_item(self, response):

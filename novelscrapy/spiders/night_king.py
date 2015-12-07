@@ -13,7 +13,7 @@ class NightKingSpider(CrawlSpider):
 
     rules = (
         # Rule(LinkExtractor(allow=('http://tieba.baidu.com/f\?kw=%E6%B0%B8%E5%A4%9C%E5%90%9B%E7%8E%8B&ie=utf-8&tab=good&cid=&pn=[0-9]*',),)),
-        Rule(LinkExtractor(allow=r'/p/[0-9]*'), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow=r'/p/[0-9]*'), callback='parse_item', follow=False),
     )
 
     def parse_item(self, response):
