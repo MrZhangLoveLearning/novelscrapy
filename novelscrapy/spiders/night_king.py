@@ -26,7 +26,7 @@ class NightKingSpider(CrawlSpider):
         i['art_type'] = u"永夜君王"
         i['art_title'] = response.xpath('//title/text()').extract()[0]
         i['content'] = u''.join(response.xpath("//div[@class='p_content ']/cc/div").extract())
-        if i['art_title'].find(u"卷") >= 0:
+        if i['art_title'].find(u"卷") >= 0 :
             return i
         else:
             print 'this is not a good url：'+i['art_url']

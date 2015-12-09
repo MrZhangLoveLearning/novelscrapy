@@ -15,7 +15,7 @@ class DropPipeLine(object):
 		if item['art_url']:
 			if db_helper.is_exist_url(item['art_url']):
 				raise DropItem('the article had colocted %s' % item['art_url'])
-			else:
+			elif item['art_title'].find(u"山寨") < 0:
 				return item
 		else:
 			raise KeyError('the art_url in item should\'n bell null')

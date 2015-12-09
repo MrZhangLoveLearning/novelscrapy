@@ -26,7 +26,7 @@ class BeatGodSpider(CrawlSpider):
         i['art_type'] = u"择天记"
         i['art_title'] = response.xpath('//title/text()').extract()[0]
         i['content'] = u''.join(response.xpath("//div[@class='p_content ']/cc/div").extract())
-        if i['art_title'].find(u'【择天记】') >= 0 :
+        if i['art_title'].find(u'【择天记】') >= 0  :
             return i
         else:
             print 'this is not a good novel web'+i['art_url']
