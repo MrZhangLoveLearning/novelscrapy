@@ -13,9 +13,9 @@ import connection
 class DropPipeLine(object):
 	def process_item(self, item, spider):
 		if item['art_url']:
-			if db_helper.is_exist_url(item['art_url']):
+			if db_helper.is_exist_url(item['art_url']) and item['art_title'].find(u"山寨") > 0:
 				raise DropItem('the article had colocted %s' % item['art_url'])
-			elif item['art_title'].find(u"山寨") < 0:
+			else:
 				return item
 		else:
 			raise KeyError('the art_url in item should\'n bell null')
