@@ -9,7 +9,7 @@ Article=model.Article
 def is_exist_url(url):
 	session=connection.init_db()
 	query=session.query(Article)
-	aritcle=query.filter(Article.art_url==url).scalar()
+	aritcle=query.filter(Article.art_url == url).scalar()
 	if aritcle:
 		return 1
 	return 0
@@ -90,7 +90,7 @@ def send_art_email(to_self=False):
 # clear_email(0)
 # save_art('d','d','test')
 
-# is_exist_url('df') 
+# print is_exist_url('http://tieba.baidu.com/p/4209153067?see_lz=1') 
 # connection.drop_db()
 #7
 #13
