@@ -74,11 +74,11 @@ def clear_email(is_clean=1):
 	session=connection.init_db()
 	session.execute('update article set is_send=%d'%is_clean)
 	session.commit()
-	for i in session.query(Article).all():
-		if i.is_send:
-			print i.art_url+' \t'+'had send'
-		else:
-			print i.art_url+'\t'+'do not send'
+	# for i in session.query(Article).all():
+	# 	if i.is_send:
+	# 		print i.art_url+' \t'+'had send'
+	# 	else:
+	# 		print i.art_url+'\t'+'do not send'
 	
 def send_art_email(to_self=False):
 	content=get_send_content(10,to_self)
