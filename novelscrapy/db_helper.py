@@ -31,8 +31,8 @@ def count():
 	count=session.query(func.count('*')).filter(Article.is_send==False).scalar()
 	return count
 
-title=u"<div><a href=\"%s\">%s</a></div>"
-message=u'today have no news'
+title=u"<div>%d<a href=\"%s\">%s</a></div>"
+message=u'today have no novels'
 
 def get_send_content(num, to_self=False):
 	content = []
@@ -53,13 +53,13 @@ def get_send_content(num, to_self=False):
 		get_url = None
 	for a in query.filter(Article.is_send == False).order_by(Article.id.desc()).limit(get_all).all():
 		box = []
-		box.append(title%(a.art_url, a.art_title))
+		box.append(title%(a.id, a.art_url, a.art_title))
 		box.append(a.content)
 		content.append(u''.join(box))
 	if get_url:
 		for a in query.filter(Article.is_send == False).order_by(Article.id.desc()).offset(num).limit(get_url).all():
 			box = []
-			box.append(title%(a.art_url, a.art_title))
+			box.append(title%(a.id, a.art_url, a.art_title))
 			content.append(u''.join(box))
 	send_content = u''.join(content)
 	return send_content
@@ -86,7 +86,7 @@ def send_art_email(to_self=False):
 		clear_email()
 	# print content
 	return send_email.send_mail('novels newest',content,to_self)
-
+# print  get_send_content(100)
 # clear_email(0)
 # save_art('d','d','test')
 

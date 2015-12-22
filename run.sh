@@ -18,8 +18,8 @@ $base_dir/env/bin/pip install -r $base_dir/requirements.txt
 # sudo easy_install green let
 # sudo easy_install gevent
 cd $base_dir/novelscrapy
-scrapy crawl perfect_world
-scrapy crawl beat_god
-scrapy crawl night_king
-scrapy crawl swod_dynasty
-python $base_dir/novelscrapy/send.py
+# scrapy crawl perfect_world
+# scrapy crawl beat_god
+# scrapy crawl night_king
+# scrapy crawl swod_dynasty
+python $base_dir/novelscrapy/run.py
