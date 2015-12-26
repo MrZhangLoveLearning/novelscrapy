@@ -9,11 +9,18 @@ import connection
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+FITER_LIST = [u"山寨", u"书评", u"回帖"]
+
+def filter(title):
+	for i in FITER_LIST:
+		if title.find(i) > 0:
+			return True
+	return False
 
 class DropPipeLine(object):
 	def process_item(self, item, spider):
 		if item['art_url']:
-			if db_helper.is_exist_url(item['art_url']) or item['art_title'].find(u"山寨") > 0:
+			if db_helper.is_exist_url(item['art_url']) or filter(item['art_url']):
 				raise DropItem('the article had colocted %s' % item['art_url'])
 			else:
 				return item

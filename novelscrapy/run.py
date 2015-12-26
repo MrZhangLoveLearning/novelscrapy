@@ -2,6 +2,16 @@
 
 import subprocess
 import db_helper
+import logging
+
+def get_text():
+    subprocess.call(['scrapy', 'crawl', 'perfect_world'])
+    subprocess.call(['scrapy', 'crawl', 'beat_god'])
+    subprocess.call(['scrapy', 'crawl', 'night_king'])
+    subprocess.call(['scrapy', 'crawl', 'swod_dynasty'])
+    content = db_helper.get_send_content(10, True)
+    db_helper.clear_email()
+    return content
 
 # scrapy crawl perfect_world
 # scrapy crawl beat_god
