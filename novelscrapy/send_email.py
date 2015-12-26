@@ -2,16 +2,16 @@
 import smtplib  
 from email.mime.text import MIMEText  
 import ConfigParser
-conf = ConfigParser.RawConfigParser()
-conf.read('passwd.ini')
-username=conf.get('163', 'username')
-passwd=conf.get('163','passwd')
-mailto_list_my=[username+'@163.com'] 
-mailto_list=["2529450174@qq.com"] 
-mail_host="smtp.163.com"  #设置服务器
-mail_user=username    #用户名
-mail_pass=passwd   #口令 
-mail_postfix="163.com"  #发件箱的后缀
+# conf = ConfigParser.RawConfigParser()
+# conf.read('passwd.ini')
+# username=conf.get('163', 'username')
+# passwd=conf.get('163','passwd')
+# mailto_list_my=[username+'@163.com'] 
+# mailto_list=["2529450174@qq.com"] 
+# mail_host="smtp.163.com"  #设置服务器
+# mail_user=username    #用户名
+# mail_pass=passwd   #口令 
+# mail_postfix="163.com"  #发件箱的后缀
   
 def send_mail(sub,content,to_self=False):  #to_list：收件人；sub：主题；content：邮件内容
     if to_self:
